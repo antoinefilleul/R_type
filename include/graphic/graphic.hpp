@@ -3,50 +3,26 @@
 
 class Graphic : public IGraphic {
 public:
-    Graphic() : window(nullptr) {}
+    Graphic();
 
-    ~Graphic() {
-        if (window) {
-            delete window;
-        }
-    }
+    ~Graphic();
 
-    void createWindow(int width, int height, const std::string& title) override {
-        window = new sf::RenderWindow(sf::VideoMode(width, height), title);
-    }
+    void createWindow(int width, int height, const std::string& title) override;
 
-    void clearWindow() override {
-        if (window) {
-            window->clear();
-        }
-    }
+    void clearWindow() override;
 
-    void displayWindow() override {
-        if (window) {
-            window->display();
-        }
-    }
+    void displayWindow() override;
 
-    bool isWindowOpen() const override {
-        return window && window->isOpen();
-    }
+    bool isWindowOpen() const override;
 
-    void pollEvents() override {
-        if (window) {
-            sf::Event event;
-            while (window->pollEvent(event)) {
-                if (event.type == sf::Event::Closed) {
-                    window->close();
-                }
-            }
-        }
-    }
+    void pollEvents() override;
 
-    void draw(const sf::Drawable& drawable) override {
-        if (window) {
-            window->draw(drawable);
-        }
-    }
+    void draw(const sf::Drawable& drawable) override;
+
+    // New functions for sprites
+    bool loadTexture(const std::string& filename, sf::Texture& texture);
+    void drawSprite(const sf::Sprite& sprite);
+    sf::RenderWindow* getWindow(); // Add this method
 
 private:
     sf::RenderWindow* window;

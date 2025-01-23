@@ -1,0 +1,23 @@
+{
+	"player": {
+        "hp": 100,
+        "sprite": "player.png",
+        "collision_damage": "10",
+        "speedx": "0",
+        "speedy": "0"
+    },
+    "ennemy1": {
+        "hp": 100,
+        "sprite": "ennemy.png",
+        "collision_damage": "10",
+        "speedx": "-5",
+        "speedy": "0"
+    },
+    "ennemy2": {
+        "hp": 100,
+        "sprite": "ennemy.png",
+        "collision_damage": "10",
+        "speedx": "-5",
+        "speedy": "0"
+    }
+}

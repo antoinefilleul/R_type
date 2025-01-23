@@ -7,7 +7,7 @@ project(R_type)
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 
 # Add the executable
-add_executable(R_type src/main.cpp)
+add_executable(R_type src/main.cpp src/graphic.cpp)
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 # Link SFML libraries
 target_link_libraries(R_type sfml-graphics sfml-window sfml-system)
