@@ -1,8 +1,9 @@
 #pragma once
-#include "SparseEntityArray.hpp"
-class ColysionSystem {
+#include "ISystems.hpp"
+
+class ColysionSystem : public ISystem{
     public:
-        ColysionSystem();
-        ~ColysionSystem();
-        void run(SparseEntityArray entities, sf::Time elapsed);
+        ColysionSystem() = default;
+        ~ColysionSystem() = default;
+        void run(context& context) override;
 };

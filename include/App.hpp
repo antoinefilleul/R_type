@@ -1,10 +1,14 @@
 #pragma once
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
+#include <memory>
 #include <nlohmann/json.hpp>
-#include <fstream>
-#include <iostream>
-#include "../include/graphic/graphic.hpp" // Include the header file for the Graphic class
-#include "ECS/SpeedSystem.hpp" // Include the header file for the SpeedSystem class
-#include "ECS/ColysionSystem.hpp" // Include the header file for the ColysionSystem class
+#include <vector>
+#include "ECS/ISystems.hpp"
+#include "../include/graphic/graphic.hpp"
+#include "ECS/SparseEntityArray.hpp"
+
 class App {
     public:
         App();
@@ -14,8 +18,7 @@ class App {
         SparseEntityArray entities;
     private:
         Graphic graphic;
-        ColysionSystem colysionSystem;
-        SpeedSystem speedSystem;
-        sf::Clock clock; // Add the clock member
+        std::vector<std::unique_ptr<ISystem>> systems;
+        sf::Clock clock;
 
 };

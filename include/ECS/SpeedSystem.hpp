@@ -1,9 +1,8 @@
 #pragma once
-#include "SparseEntityArray.hpp"
-
-class SpeedSystem {
+#include "ISystems.hpp"
+class SpeedSystem : public ISystem{
     public:
-        SpeedSystem();
-        ~SpeedSystem();
-        void run(SparseEntityArray entities, sf::Time elapsed);
+        SpeedSystem() = default;
+        ~SpeedSystem() = default;
+        void run(context& context) override;
 };

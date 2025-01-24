@@ -1,23 +1,35 @@
 {
 	"player": {
         "hp": 100,
-        "sprite": "player.png",
+        "sprite": "assets/pigeot.png",
         "collision_damage": "10",
+        "x": "0",
+        "y": "0",
         "speedx": "0",
-        "speedy": "0"
+        "speedy": "0",
+        "animation": "3",
+        "spritesize": "32"
     },
     "ennemy1": {
         "hp": 100,
-        "sprite": "ennemy.png",
+        "sprite": "assets/pigeot.png",
         "collision_damage": "10",
+        "x": "0",
+        "y": "0",
         "speedx": "-5",
-        "speedy": "0"
+        "speedy": "0",
+        "animation": "3",
+        "spritesize": "32"
     },
     "ennemy2": {
         "hp": 100,
-        "sprite": "ennemy.png",
+        "sprite": "assets/pigeot.png",
         "collision_damage": "10",
+        "x": "0",
+        "y": "0",
         "speedx": "-5",
-        "speedy": "0"
+        "speedy": "0",
+        "animation": "3",
+        "spritesize": "32"
     }
 }
