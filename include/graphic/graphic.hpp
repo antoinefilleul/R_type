@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include "IGraphic.hpp"
 
 class Graphic : public IGraphic {
@@ -19,6 +20,7 @@ public:
 
     void draw(const sf::Drawable& drawable) override;
 
+    sf::Keyboard::Key getDirection() const;
     // New functions for sprites
     bool loadTexture(const std::string& filename, sf::Texture& texture);
     void drawSprite(const sf::Sprite& sprite);
@@ -26,4 +28,5 @@ public:
 
 private:
     sf::RenderWindow* window;
+    sf::Keyboard::Key direction;
 };

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/System/Clock.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include <bitset>
 #include <cassert>
 #include <cstdint>
@@ -19,6 +21,10 @@ struct SpeedComponent {
     sf::Vector2<int> Speed;
 };
 
+struct InputComponent {
+    sf::Keyboard::Key direction;
+};
+
 struct FightComponent {
     int hp;
     int damage;
@@ -27,6 +33,7 @@ struct FightComponent {
 };
 
 struct DisplayComponent {
+	sf::Clock animationClock;
 	Graphic *graphic;
     int animation;
     int spriteIndex;

@@ -1,4 +1,5 @@
 #include "../include/graphic/graphic.hpp"
+#include <SFML/Window/Event.hpp>
 
 Graphic::Graphic() : window(nullptr) {}
 
@@ -35,6 +36,9 @@ void Graphic::pollEvents() {
             if (event.type == sf::Event::Closed) {
                 window->close();
             }
+            if (event.type == sf::Event::KeyPressed) {
+                direction = event.key.code;
+            }
         }
     }
 }
@@ -43,6 +47,10 @@ void Graphic::draw(const sf::Drawable& drawable) {
     if (window) {
         window->draw(drawable);
     }
+}
+
+sf::Keyboard::Key Graphic::getDirection() const {
+    return direction;
 }
 
 bool Graphic::loadTexture(const std::string& filename, sf::Texture& texture) {
